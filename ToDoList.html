@@ -1,0 +1,132 @@
+﻿ <html>
+<head>
+    <meta charset=utf-8 />
+    <link href="ToDoList.css" rel="stylesheet" />
+    <link href="ToDoList.js" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <input type="text" placeholder="New Item..." id="item" />
+            <button id="add">+</button>
+        </header>
+        <h2>To Do:</h2>
+        <ul class="todo" id="todo">
+            <li>Hit snooze four times</li>
+            <li>Wake up and stretch</li>
+            <li>Drink a lot of coffee</li>
+            <li>Run Roomba</li>
+            <li>Wash dishes</li>
+            <li>Wash laundry</li>
+            <li>Make dinner</li>
+        </ul>
+        <h2>Completed:</h2>
+        <ul class="completed" id="completed">
+            <li>Drink a lot of coffee</li>
+        </ul>
+    </div>
+
+    <script>
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function (ev) {
+            if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("Add something here!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("myInput").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html> 
+
+<!--<html>
+
+<head>
+    <meta charset=utf-8 />
+    <link href="ToDoList.css" rel="stylesheet" />
+    <link href="ToDoList.js" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700" rel="stylesheet" />
+</head>
+
+<body>
+    <input type='text' id='idea'>
+    <input type="button" id="add" value="Add New">
+    <script>
+    document.getElementById("add").onclick = function () {
+
+            var node = document.createElement("Li");
+            var text = document.getElementById("idea").value;
+            var textnode = document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("list").appendChild(node);
+        }
+
+    </script>
+
+    <ul id='list'>
+        <li>Hit snooze four times</li>
+        <li>Wake up and stretch</li>
+        <li>Drink a lot of coffee</li>
+        <li>Run Roomba</li>
+        <li>Wash dishes</li>
+        <li>Wash laundry</li>
+        <li>Make dinner</li>
+    </ul>
+    <h2>Completed:</h2>
+    <ul class="completed" id="completed">
+        <li>Drink a lot of coffee</li>
+    </ul>
+    </div>
+    </ul>
+
+
+</body>
+
+</html>-->
