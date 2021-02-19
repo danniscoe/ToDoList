@@ -1,4 +1,5 @@
-﻿ <html>
+<html>
+
 <head>
     <meta charset=utf-8 />
     <link href="ToDoList.css" rel="stylesheet" />
@@ -9,9 +10,11 @@
 <body>
     <div id="container">
         <header>
-            <input autofocus type="text" aria-label="Enter a new todo item" placeholder="Ex. Finish CodeSHV Labs" class="js-todo-input">
-            <button id="add">+</button>
+            <center><input autofocus type="text" aria-label="Enter a new todo item"
+                    placeholder="Ex. Finish CodeSHV Labs" class="js-todo-input"></center>
+
         </header>
+        <hr>
         <h2>To Do:</h2>
         <ul class="todo" id="todo">
             <li>Hit snooze four times</li>
@@ -26,6 +29,7 @@
         <ul class="completed" id="completed">
             <li>Drink a lot of coffee</li>
         </ul>
+
     </div>
 
     <script>
@@ -84,7 +88,7 @@
     </script>
 </body>
 
-</html> 
+</html>
 
 <!--<html>
 
@@ -97,17 +101,17 @@
 
 <body>
     <input type='text' id='idea'>
-    <input type="button" id="add" value="Add New">
-    <script>
-    document.getElementById("add").onclick = function () {
 
+    <input type="button" id="add" value="Add New">
+    
+<script>
+    document.getElementById("add").onclick = function () {
             var node = document.createElement("Li");
             var text = document.getElementById("idea").value;
             var textnode = document.createTextNode(text);
             node.appendChild(textnode);
             document.getElementById("list").appendChild(node);
-        }
-
+    
     </script>
 
     <ul id='list'>
@@ -124,9 +128,6 @@
         <li>Drink a lot of coffee</li>
     </ul>
     </div>
-    </ul>
-
-
 </body>
 
 </html>-->
